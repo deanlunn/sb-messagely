@@ -7,9 +7,7 @@ const User = require("../models/user");
 const Message = require("../models/message");
 const { SECRET_KEY } = require("../config");
 
-
 describe("Message Routes Test", function () {
-
   let testUserToken;
 
   beforeEach(async function () {
@@ -80,15 +78,15 @@ describe("Message Routes Test", function () {
             username: "test1",
             first_name: "Test1",
             last_name: "Testy1",
-            phone: "+14155550000"
+            phone: "+14155550000",
           },
           to_user: {
             username: "test2",
             first_name: "Test2",
             last_name: "Testy2",
             phone: "+14155552222",
-          }
-        }
+          },
+        },
       });
     });
 
@@ -107,15 +105,15 @@ describe("Message Routes Test", function () {
             username: "test1",
             first_name: "Test1",
             last_name: "Testy1",
-            phone: "+14155550000"
+            phone: "+14155550000",
           },
           from_user: {
             username: "test2",
             first_name: "Test2",
             last_name: "Testy2",
             phone: "+14155552222",
-          }
-        }
+          },
+        },
       });
     });
 
@@ -140,13 +138,11 @@ describe("Message Routes Test", function () {
 
   describe("POST /", function () {
     test("can post message", async function () {
-      let response = await request(app)
-        .post("/messages/")
-        .send({
-          to_username: "test2",
-          body: "another test1 -> test2",
-          _token: testUserToken
-        });
+      let response = await request(app).post("/messages/").send({
+        to_username: "test2",
+        body: "another test1 -> test2",
+        _token: testUserToken,
+      });
 
       expect(response.body).toEqual({
         message: {
@@ -154,19 +150,17 @@ describe("Message Routes Test", function () {
           sent_at: expect.any(String),
           from_username: "test1",
           to_username: "test2",
-          body: "another test1 -> test2"
-        }
+          body: "another test1 -> test2",
+        },
       });
     });
 
     test("cannot send to bad username", async function () {
-      let response = await request(app)
-        .post("/messages/")
-        .send({
-          to_username: "wrong",
-          body: "body here",
-          _token: testUserToken
-        });
+      let response = await request(app).post("/messages/").send({
+        to_username: "wrong",
+        body: "body here",
+        _token: testUserToken,
+      });
 
       expect(response.statusCode).toEqual(500);
     });
@@ -184,7 +178,7 @@ describe("Message Routes Test", function () {
         message: {
           id: 2,
           read_at: expect.any(String),
-        }
+        },
       });
     });
 
