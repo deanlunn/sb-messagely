@@ -1,0 +1,80 @@
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #need-auth,
+    #has-auth {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #has-auth {
+      display: none;
+    }
+
+    #msgs-from,
+    #msgs-to {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #msgs-from li,
+    #msgs-to li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    #new-message-form {
+      margin-bottom: 20px;
+    }
+
+    #logout {
+      background-color: #f44336;
+    }
+
+    #logout:hover {
+      background-color: #d32f2f;
+    }
