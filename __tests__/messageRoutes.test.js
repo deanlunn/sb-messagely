@@ -162,7 +162,7 @@ describe("Message Routes Test", function () {
         _token: testUserToken,
       });
 
-      expect(response.statusCode).toEqual(500);
+      expect(response.statusCode).toEqual(404);
     });
   });
 
